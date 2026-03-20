@@ -1,0 +1,152 @@
+/* Figma 60-28443 — outer height matches AI Coach (281px). */
+.savings-card {
+  width: 598px;
+  min-width: 598px;
+  max-width: 598px;
+  height: 281px;
+  min-height: 281px;
+  max-height: 281px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px;
+  box-sizing: border-box;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.08);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+}
+
+.savings-card__top {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.savings-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.savings-card__title {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  /* Figma heading box h=21 (node 60:28448) */
+  line-height: 21px;
+  color: #101828;
+}
+
+.savings-card__badge {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  background: #fffaeb;
+  border: 1px solid #fedf89;
+  border-radius: 9999px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #b54708;
+  white-space: nowrap;
+}
+
+.savings-card__divider {
+  width: 100%;
+  height: 0;
+  border: none;
+  border-bottom: 2px dashed #cbd5e1;
+}
+
+.savings-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.savings-card__hero {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 10px;
+  width: 100%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.savings-card__amount {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: -0.96px;
+  color: #101828;
+}
+
+.savings-card__hero-caption {
+  margin: 0;
+  padding-bottom: 4px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #667085;
+  flex-shrink: 0;
+}
+
+.savings-card__rows {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.savings-card__row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+}
+
+.savings-card__label,
+.savings-card__value {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.savings-card__label {
+  color: #667085;
+}
+
+.savings-card__value {
+  color: #101828;
+  text-align: right;
+}
+
+.savings-card__value--warning {
+  color: #b54708;
+}

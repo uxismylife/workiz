@@ -1,0 +1,94 @@
+/*
+ * Figma node 60-28517 — 540×281 glass card (artboard px).
+ * Cursor “Position” may show ~185px height when ViewportCanvas scale ≈ 0.66 — computed height is still 281px.
+ */
+.ai-coach-card {
+  width: 540px;
+  min-width: 540px;
+  max-width: 540px;
+  height: 281px;
+  min-height: 281px;
+  max-height: 281px;
+  flex-shrink: 0;
+  /* Align top with `.savings-card`: savings starts at 238+32+179+32=481; AI flex top is map+32+courier+32+spacer+32 → 513 when map=329 & spacer=0, so −32px. If map height changes, this offset must be recomputed. */
+  margin-top: -32px;
+  padding: 32px;
+  box-sizing: border-box;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.08);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+}
+
+.ai-coach-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px 4px 10px;
+  background: #eef4ff;
+  border: 1px solid #c7d7fe;
+  border-radius: 9999px;
+  box-sizing: border-box;
+}
+
+.ai-coach-card__badge-icon {
+  display: block;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.ai-coach-card__badge-text {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #3538cd;
+  white-space: nowrap;
+}
+
+.ai-coach-card__divider {
+  width: 100%;
+  max-width: 476px;
+  height: 0;
+  margin-top: 22px;
+  margin-bottom: 22px;
+  border: none;
+  border-bottom: 2px dashed #cbd5e1;
+}
+
+.ai-coach-card__list {
+  margin: 0;
+  padding-left: 24px;
+  list-style: decimal;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  color: #101828;
+  /* Size set on li so markers + text both resolve to 16px */
+}
+
+.ai-coach-card__list li {
+  padding-left: 4px;
+  font-size: 16px;
+  line-height: 47px;
+  font-weight: 400;
+  color: #101828;
+}
+
+.ai-coach-card__list li::marker {
+  font-size: 16px;
+  font-weight: 400;
+  color: #101828;
+}
+
+.ai-coach-card__list li span {
+  font-size: inherit;
+}
+
+.ai-coach-card__emph {
+  font-weight: 500;
+}

@@ -1,0 +1,42 @@
+/* Figma node 60-28527 */
+
+.door-cta {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 598px;
+  max-width: 100%;
+  height: 60px;
+  flex-shrink: 0;
+  padding: 16px 22px;
+  border-radius: 24px;
+  background: #ffd400;
+  border: 1px solid #c8a700;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  overflow: clip;
+}
+
+.door-cta__label {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  color: #101828;
+  white-space: nowrap;
+}
+
+.door-cta__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.door-cta__icon {
+  display: block;
+}

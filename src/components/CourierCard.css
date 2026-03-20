@@ -1,0 +1,80 @@
+/*
+ * Figma node 60-28501 — Courier Card 540×88 (artboard px).
+ * Cursor “Position” may show ~57px height when ViewportCanvas scale ≈ 0.65 — computed height is still 88px.
+ */
+.courier-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 540px;
+  min-width: 540px;
+  max-width: 540px;
+  height: 88px;
+  min-height: 88px;
+  max-height: 88px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.courier-card__customer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 1 0;
+  min-width: 0;
+  gap: 0;
+}
+
+.courier-card__phone-wrap {
+  padding-right: 8px;
+  flex-shrink: 0;
+}
+
+.courier-card__phone {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  width: 125px;
+}
+
+.courier-card__label {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #667085;
+}
+
+.courier-card__phone .courier-card__label {
+  text-align: right;
+  width: 100%;
+}
+
+.courier-card__value {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #101828;
+}
+
+.courier-card__phone .courier-card__value {
+  text-align: right;
+  width: 100%;
+}
+
+.courier-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: #111827;
+  border-radius: 14px;
+}

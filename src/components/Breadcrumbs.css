@@ -1,0 +1,48 @@
+/* Figma 60-28380: trail @ x=90 y=103; 88 + 15 + row + 32 = 161 → row min 26px (18px/26px type) */
+.breadcrumbs {
+  flex-shrink: 0;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding-top: 15px;
+  padding-bottom: 32px;
+  padding-left: max(90px, env(safe-area-inset-left, 0px));
+  padding-right: max(90px, env(safe-area-inset-right, 0px));
+}
+
+.breadcrumbs__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  min-height: 26px;
+}
+
+.breadcrumbs__chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.breadcrumbs__chevron-img {
+  display: block;
+  width: 9px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.breadcrumbs__crumb {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #475467;
+  white-space: nowrap;
+}
+
+.breadcrumbs__crumb--current {
+  font-weight: 600;
+  color: #3538cd;
+}

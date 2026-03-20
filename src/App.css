@@ -1,0 +1,104 @@
+.app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+  /* NEVER max-width: 100% here — % resolves against the *scaled* wrapper (~892px)
+     and shrinks the whole iPad frame + header below 1366px. */
+  width: 1366px;
+  min-width: 1366px;
+  height: 1024px;
+  min-height: 1024px;
+  background: linear-gradient(87.45deg, #E9F0F3 8.03%, #F4ECE5 89.73%);
+  overflow: hidden;
+}
+
+/*
+ * Figma frame 60-28380 (geometry):
+ * - Breadcrumbs @ x=90, y=103; columns @ x=90 / x=688
+ * - Column gap: 688 − (90 + 540) = 58px; right inset: 1366 − (688 + 598) = 80px
+ * - Right column: Property / Energy / Savings **`gap: 32px`**; **29px** Savings → Door CTA (Figma `60-28380`)
+ */
+.app__map {
+  flex-shrink: 0;
+  padding-top: 0;
+  padding-right: max(80px, env(safe-area-inset-right, 0px));
+  padding-bottom: max(31px, env(safe-area-inset-bottom, 0px));
+  padding-left: max(90px, env(safe-area-inset-left, 0px));
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* Two flex columns — no CSS Grid (stable layout). */
+.app__map-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+}
+
+.app__map-layout__sync {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 58px;
+  width: 100%;
+  min-width: 0;
+}
+
+.app__map-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 32px;
+  width: 540px;
+  flex-shrink: 0;
+  min-height: 0;
+  align-self: stretch;
+}
+
+.app__map-stack__spacer {
+  flex: 1 1 0;
+  min-height: 0;
+  width: 100%;
+}
+
+.app__map-right__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 598px;
+  max-width: 100%;
+  flex-shrink: 0;
+  min-height: 0;
+  align-self: stretch;
+}
+
+.app__map-cta-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 58px;
+  width: 100%;
+  margin-top: 29px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.app__map-cta-row__spacer {
+  width: 540px;
+  flex-shrink: 0;
+}
+
+/* Remaining space below header inside fixed 1024px canvas */
+.app__main {
+  flex: 0 0 0;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+}

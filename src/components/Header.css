@@ -1,0 +1,152 @@
+/* Header: sized for iPad legibility (larger than Figma 24px glyphs / 36px taps) */
+
+.header-shell {
+  position: relative;
+  /* Full bleed of 1366px artboard — no max-width:% (same shrinking bug as .app) */
+  width: 100%;
+  min-width: 100%;
+  align-self: stretch;
+  /* Fixed bar height inside 1366×1024 artboard */
+  height: 88px;
+  min-height: 88px;
+  max-height: 88px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Soft tint behind bar — same height as shell so it fits the iPad frame */
+.header-shell__gradient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(233, 240, 243, 0.65) 0%,
+    rgba(244, 236, 229, 0.35) 100%
+  );
+}
+
+/* Top bar: stays inside 1366px — clip/scroll-safe flex */
+.header-shell__bar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 0;
+  min-height: 88px;
+  height: 88px;
+  /* Keep insets from pushing past artboard: cap safe-area contribution */
+  padding-left: min(max(33px, env(safe-area-inset-left, 0px)), 48px);
+  padding-right: min(max(33px, env(safe-area-inset-right, 0px)), 48px);
+  box-sizing: border-box;
+  overflow-x: clip;
+  overflow-y: hidden;
+  gap: 12px;
+}
+
+/* ── Left: Logo group — may shrink so the right cluster never leaves the frame ── */
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  flex: 1 1 0%;
+  min-height: 48px;
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  flex: 1 1 auto;
+  max-width: min(280px, 100%);
+  height: 48px;
+  overflow: hidden;
+}
+
+/* Logo wordmark + mark — taller for balance with larger icons */
+.header__logo-img {
+  display: block;
+  width: auto;
+  height: 48px;
+  max-width: 100%;
+}
+
+/* ── Icon buttons: 52×52 tap area, 36×36 glyph (readable on iPad + scaled previews) ── */
+.header__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.header__icon-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.header__icon-btn:active {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.header__icon-btn img {
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+/* ── Nav Actions — never shrink; keeps icons on-screen ── */
+.header__nav-actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 72px;
+  flex: 0 0 auto;
+}
+
+.header__bell-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Notification dot — scaled up with header icons */
+.header__badge {
+  position: absolute;
+  top: 6px;
+  right: 4px;
+  width: 18px;
+  height: 18px;
+  background: #ef4444;
+  border: 2px solid #f5eee8;
+  border-radius: 9px;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+/* ── Avatar — PNG includes ring + shadow; no extra CSS border ── */
+.header__avatar {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
